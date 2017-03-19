@@ -16,7 +16,7 @@ public class MockAspect {
     @Pointcut("execution(* hello.MessagePrinter.printMessage(..))")
     public void pointcut() {}
 
-    //@Before("pointcut()")
+    @Before("pointcut()")
     public void before(JoinPoint joinPoint) {
         System.out.println("Before.");
 
@@ -29,7 +29,7 @@ public class MockAspect {
         System.out.println("在"+target+"上调用"+method+"参数:"+args);
     }
 
-    //@After("pointcut()")
+    @After("pointcut()")
     public void after() {
         System.out.println("After.");
     }
